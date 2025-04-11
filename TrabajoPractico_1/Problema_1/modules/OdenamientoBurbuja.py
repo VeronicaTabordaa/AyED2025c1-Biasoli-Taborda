@@ -13,16 +13,26 @@ def OrdenamientoBurbuja(lista1):
 
 if __name__=="__main__":
     lista1 = [random.randint(10000,99999) for _ in range(500)]
-    print("Lista 1:", lista1)
+    #print("Lista 1:", lista1)
     listaordenadaburb = OrdenamientoBurbuja(lista1)
-    print ("lista ordenada:",listaordenadaburb)
+    #print ("lista ordenada:",listaordenadaburb)
 
 
     contador=0
-    while listaordenadaburb[i]<listaordenadaburb[i+1]:
-        
+    ordenada = True
+    while contador < len(listaordenadaburb) - 1:
+        if listaordenadaburb[contador] > listaordenadaburb[contador + 1]:  
+            ordenada = False
+            break  
+        contador += 1
+   
+    if ordenada:
+        print("La lista está correctamente ordenada.")
+    else:
+        print("La lista NO está ordenada.")
 
-    def ordenada_si_o_no(lista):
+
+'''    def ordenada_si_o_no(lista):
         for i in range(len(listaordenadaburb)-1):
             if listaordenadaburb[i]>listaordenadaburb[i+1]:
                 return False
@@ -31,4 +41,4 @@ if __name__=="__main__":
     if ordenada_si_o_no(listaordenadaburb)==True:
         print("está ordenada")
     else:
-        print("no está ordenada") 
+        print("no está ordenada") '''
