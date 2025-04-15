@@ -14,10 +14,16 @@ def OrdenamientoBurbuja(lista1):
                 lista1[i+1] = temp
     return lista1
 
-if __name__=="__main__":
-    lista1 = [random.randint(10000,99999) for _ in range(500)]
+
+lista1 = [random.randint(10000,99999) for _ in range(500)]
+#print("Lista 1:", lista1)
+listaordenadaburb = OrdenamientoBurbuja(lista1)
+#print ("lista ordenada:",listaordenadaburb)
+
+#if __name__=="__main__":
+    #lista1 = [random.randint(10000,99999) for _ in range(500)]
     #print("Lista 1:", lista1)
-    listaordenadaburb = OrdenamientoBurbuja(lista1)
+    #listaordenadaburb = OrdenamientoBurbuja(lista1)
     #print ("lista ordenada:",listaordenadaburb)
 
 contador=0
