@@ -18,7 +18,7 @@ if __name__=="__main__":
     lista1 = [random.randint(10000,99999) for _ in range(500)]
     #print("Lista 1:", lista1)
     listaordenadaburb = OrdenamientoBurbuja(lista1)
-    print ("lista ordenada:",listaordenadaburb)
+    #print ("lista ordenada:",listaordenadaburb)
 
 contador=0
 ordenada = True
