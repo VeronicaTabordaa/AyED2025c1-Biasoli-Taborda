@@ -181,4 +181,3 @@ class JuegoGuerra:
              print(f'***** {self._ganador} gana la partida *****')  
 
 
-

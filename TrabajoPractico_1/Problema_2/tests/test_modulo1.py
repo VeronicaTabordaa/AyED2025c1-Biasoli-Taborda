@@ -3,9 +3,14 @@
 Created on Thu Sep  1 14:00:21 2022
 @author: Catedra de Algoritmos y Estructura de Datos
 """
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+#las líneas 6, 7 y 8 fueron agregadas ya que el archivo de prueba se encuentra 
+# en una carpeta diferente a la del módulo
+# y no se puede importar el módulo directamente, ya que al querer hacerlo largaba error
 
-from modules.ListaDobleEnlazada import ListaDobleEnlazada
-from modules.Nodo import Nodo
+from modules.ListaDobleEnlazada import ListaDoblementeEnlazada
 import unittest
 import random
 
@@ -16,19 +21,19 @@ class Test_LDE(unittest.TestCase):
     def setUp(self):
         self.n_elementos = 200
         """ LDE vacía """
-        self.lde_1 = ListaDobleEnlazada()
+        self.lde_1 = ListaDoblementeEnlazada()
 
         """ LDE con elementos repetidos con lista auxiliar"""
-        self.lde_2 = ListaDobleEnlazada()
+        self.lde_2 = ListaDoblementeEnlazada()
         self.lista_aux_2 = random.choices(range(-self.n_elementos // 2, self.n_elementos // 2), k=self.n_elementos)
         for item in self.lista_aux_2:
-            self.lde_2.agregar_al_final(item)
+            self.lde_2.agregar__al__final(item)
 
         """LDE de elementos no repetidos con lista auxiliar"""
-        self.lde_3 = ListaDobleEnlazada()
+        self.lde_3 = ListaDoblementeEnlazada()
         self.lista_aux_3 = random.sample(range(-self.n_elementos, self.n_elementos), self.n_elementos)
         for item in self.lista_aux_3:
-            self.lde_3.agregar_al_final(item)
+            self.lde_3.agregar__al__final(item)
 
         # self.posicion = random.randint(1, self.n_elementos - 1)  # randint incluye el extremo
 
@@ -46,7 +51,7 @@ class Test_LDE(unittest.TestCase):
                              "obtenidos por recorrido manual de la LDE desde la cabeza")
             nodo = nodo.siguiente
 
-    def test_agregar_al_inicio(self):
+    def test_agregar__al__inicio(self):
         """
         pruebo que al agregar elementos al inicio de la lista
         la misma tiene tamaño correcto y se llena correctamente
@@ -55,7 +60,7 @@ class Test_LDE(unittest.TestCase):
 
         # Agregar al inicio de lista no vacia
         lde2_copia = self.lde_2.copiar()
-        lde2_copia.agregar_al_inicio(valorNuevo)
+        lde2_copia.agregar__al__inicio(valorNuevo)
 
         self.recorrer_lista(lde2_copia)
         self.assertEqual(len(self.lde_2), len(lde2_copia) - 1,
@@ -75,7 +80,7 @@ class Test_LDE(unittest.TestCase):
 
         # Anexar en lista vacia (self.lde_1)
         lde1_copia = self.lde_1.copiar()
-        lde1_copia.agregar_al_inicio(valorNuevo)
+        lde1_copia.agregar__al__inicio(valorNuevo)
 
         self.recorrer_lista(lde1_copia)
         self.assertEqual(len(lde1_copia), 1,
@@ -86,7 +91,7 @@ class Test_LDE(unittest.TestCase):
         self.assertIs(lde1_copia.cabeza, lde1_copia.cola,
                       "En una lista de un elemento, la cabeza es la misma que la cola")
 
-    def test_agregar_al_final(self):
+    def test_agregar__al__final(self):
         """
         pruebo que al anexar elementos al final de la lista
         la misma tiene tamaño correcto y se llena correctamente
@@ -96,7 +101,7 @@ class Test_LDE(unittest.TestCase):
 
         # Anexar en lista no vacia
         lde2_copia = self.lde_2.copiar()
-        lde2_copia.agregar_al_final(valorNuevo)
+        lde2_copia.agregar__al__final(valorNuevo)
 
         self.recorrer_lista(lde2_copia)
         self.assertEqual(len(self.lde_2), len(lde2_copia) - 1,
@@ -118,7 +123,7 @@ class Test_LDE(unittest.TestCase):
 
         # Anexar en lista vacia (self.lde_1)
         lde1_copia = self.lde_1.copiar()
-        lde1_copia.agregar_al_final(valorNuevo)
+        lde1_copia.agregar__al__final(valorNuevo)
 
         self.recorrer_lista(lde1_copia)
         self.assertEqual(len(lde1_copia), 1,
@@ -332,7 +337,7 @@ class Test_LDE(unittest.TestCase):
 
         for _ in range(0, self.n_elementos):
             item = random.randint(-self.n_elementos, self.n_elementos)
-            self.lde_1.agregar_al_inicio(item)
+            self.lde_1.agregar__al__inicio(item)
 
         lista_copia = self.lde_1.copiar()
         self.lde_1.invertir()
@@ -362,6 +367,7 @@ class Test_LDE(unittest.TestCase):
         counter = 0
         elementos = []
 
+        
         self.assertIsNone(nodo.anterior,
                           "El elemento anterior a la cabeza de la lista debe ser None")
 
