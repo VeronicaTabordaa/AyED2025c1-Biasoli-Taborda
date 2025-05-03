@@ -3,8 +3,8 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from LDE import ListaDoblementeEnlazada  # LDE.py contiene la clase ListaDobleEnlazada
-from carta import Carta  # Importa la clase Carta
+from modules.LDE import ListaDoblementeEnlazada  # LDE.py contiene la clase ListaDobleEnlazada
+from modules.carta import Carta  # Importa la clase Carta
 
 #from modules.LDE import ListaDobleEnlazada  # Importa la clase ListaDobleEnlazada
 import random
