@@ -1,5 +1,9 @@
-from mazo import Mazo, DequeEmptyError
-from carta import Carta
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from modules.mazo import Mazo, DequeEmptyError
+from modules.carta import Carta
 import random
 
 N_TURNOS = 10000
@@ -160,22 +164,23 @@ class JuegoGuerra:
         
         
     def mostrar_juego(self):
-        # diferenciar las cartas del mazo y las 
-        # cartas en la mesa
-        print(f"Turno: {self._turno+1}")
-        print('jugador 1:')        
-        print(self.mazo_1)
-        print()
-        print('              ', end='')
-        for carta in self._cartas_en_la_mesa:
-            print(carta, end=' ')
-        print('\n')
-        print('jugador 2:')
-        print(self.mazo_2)            
-        print()
-        print('------------------------------------')
-        if self._ganador:
-             print(f'         ***** 3){self._ganador} gana la partida*****                           ')  
+        if self.ver_partida:
+            # diferenciar las cartas del mazo y las 
+            # cartas en la mesa
+            print(f"Turno: {self._turno+1}")
+            print('jugador 1:')        
+            print(self.mazo_1)
+            print()
+            print('              ', end='')
+            for carta in self._cartas_en_la_mesa:
+                print(carta, end=' ')
+            print('\n')
+            print('jugador 2:')
+            print(self.mazo_2)            
+            print()
+            print('------------------------------------')
+            if self._ganador:
+                print(f'         ***** 3){self._ganador} gana la partida*****                           ')  
 
 
 if __name__ == "__main__":

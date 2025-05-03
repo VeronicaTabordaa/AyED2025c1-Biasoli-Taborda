@@ -1,4 +1,3 @@
-# Archivo de test para realizar pruebas unitarias del modulo1
 # -*- coding: utf-8 -*-
 """
 Created on Sun Aug 21 11:23:53 2022
