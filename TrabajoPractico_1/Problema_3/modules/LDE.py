@@ -24,52 +24,80 @@ class Nodo:
 # Clase Lista Doblemente Enlazada
 # =========================
 
-
 class ListaDoblementeEnlazada:
     def __init__(self):
-        self.primero = None
-        self.ultimo = None
-        self._tamanio = 0
+        self.__cabeza = None        #con el __ hacemos privados los atributos
+        self.__cola = None
+        self.__tamanio = 0
+    
+    #agregamos properties y setter para podes acceder o modificar los atributos privados 
 
+    @property
+    def cabeza(self):
+        return self.__cabeza
+    
+    @cabeza.setter
+    def cabeza(self, valor):
+        self.__cabeza = valor
+    
+    @property
+    def cola(self): 
+        return self.__cola
+    
+    @cola.setter
+    def cola(self, valor):
+        self.__cola = valor
 
-    def insertar_inicio(self, dato):
-        nuevo = Nodo(dato)
-        if not self.primero:
-            self.primero = self.ultimo = nuevo
+    @property
+    def tamanio(self):
+        return self.__tamanio   
+    
+    @tamanio.setter
+    def tamanio(self, valor):
+        if valor >= 0:
+            self.__tamanio = valor  
         else:
-            nuevo.siguiente = self.primero
-            self.primero.anterior = nuevo
-            self.primero = nuevo
-        self._tamanio += 1
+            raise ValueError("El tamaño no puede ser negativo") 
+    
+    def lista_vacia(self):
+        return self.tamanio == 0
 
-
-    def insertar_final(self, dato):
-        nuevo = Nodo(dato)
-        if not self.ultimo:
-            self.primero = self.ultimo = nuevo
+    def agregar__al__inicio(self, dato):
+        nuevo_nodo = Nodo(dato)
+        if self.cabeza is None:
+            self.cabeza = nuevo_nodo
+            self.cola = nuevo_nodo
         else:
-            nuevo.anterior = self.ultimo
-            self.ultimo.siguiente = nuevo
-            self.ultimo = nuevo
-        self._tamanio += 1
+            nuevo_nodo.siguiente = self.cabeza
+            self.cabeza.anterior = nuevo_nodo
+            self.cabeza = nuevo_nodo
+        self.tamanio += 1
 
+    def agregar__al__final(self, dato):
+        nuevo_nodo = Nodo(dato)
+        if self.lista_vacia():
+            self.cabeza = nuevo_nodo
+            self.cola = nuevo_nodo
+        else:
+            nuevo_nodo.anterior = self.cola
+            self.cola.siguiente = nuevo_nodo
+            self.cola = nuevo_nodo
+        self.tamanio += 1
 
     def eliminar_inicio(self):
-        if not self.primero:
+        if not self.cabeza:
             raise DequeEmptyError("La lista está vacía")
-        dato = self.primero.dato
-        self.primero = self.primero.siguiente
-        if self.primero:
-            self.primero.anterior = None
+        dato = self.cabeza.dato
+        self.cabeza = self.cabeza.siguiente
+        if self.cabeza:
+            self.cabeza.anterior = None
         else:
-            self.ultimo = None
-        self._tamanio -= 1
+            self.cola = None
+        self.tamanio -= 1
         return dato
 
-
     def __len__(self):
-        return self._tamanio
-
+        return self.tamanio
 
     def __str__(self):
         elementos = []

@@ -7,10 +7,41 @@ from nodo import Nodo
 
 class ListaDoblementeEnlazada:
     def __init__(self):
-        self.cabeza = None
-        self.cola = None
-        self.tamanio = 0
+        self.__cabeza = None        #con el __ hacemos privados los atributos
+        self.__cola = None
+        self.__tamanio = 0
     
+    #agregamos properties y setter para podes acceder o modificar los atributos privados 
+
+    @property
+    def cabeza(self):
+        return self.__cabeza
+    
+    @cabeza.setter
+    def cabeza(self, valor):
+        self.__cabeza = valor
+    
+    @property
+    def cola(self): 
+        return self.__cola
+    
+    @cola.setter
+    def cola(self, valor):
+        self.__cola = valor
+
+    @property
+    def tamanio(self):
+        return self.__tamanio   
+    
+    @tamanio.setter
+    def tamanio(self, valor):
+        if valor >= 0:
+            self.__tamanio = valor  
+        else:
+            raise ValueError("El tamaño no puede ser negativo") 
+ 
+    #a partir de aca no se usan los __ para los atributos ya que se utilizan las properties y los setters
+
     def lista_vacia(self):
         return self.tamanio == 0
 
@@ -39,7 +70,6 @@ class ListaDoblementeEnlazada:
             self.cola = nuevo_nodo
         self.tamanio += 1
         
-
     def insertar(self,dato,posicion):
         if posicion < 0 or posicion > self.tamanio:
             raise Exception("Posición inválida")
@@ -56,7 +86,6 @@ class ListaDoblementeEnlazada:
         nodo_actual = self.cabeza         
         for _ in range(posicion - 1):  # Recorremos hasta la posición anterior
             nodo_actual = nodo_actual.siguiente
-
         # Ajuste de punteros para insertar en medio
         nuevo_nodo.siguiente = nodo_actual.siguiente
         nuevo_nodo.anterior = nodo_actual
@@ -77,7 +106,6 @@ class ListaDoblementeEnlazada:
         self._nodo_actual = self._nodo_actual.siguiente  # Avanzar al siguiente nodo
         return dato
 
-
     def __add__(self, otra_lista):
         if not isinstance(otra_lista, ListaDoblementeEnlazada):
             raise TypeError("Se requiere otra instancia de ListaDoblementeEnlazada")
@@ -89,7 +117,6 @@ class ListaDoblementeEnlazada:
                 nodo = nodo.siguiente
         return nueva_lista
 
-    
     def copiar(self):
         lista_copiada = ListaDoblementeEnlazada()
         nodo_actual = self.cabeza
@@ -97,8 +124,7 @@ class ListaDoblementeEnlazada:
             lista_copiada.agregar__al__final(nodo_actual.dato)
             nodo_actual = nodo_actual.siguiente
         return lista_copiada
-
-            
+        
     def concatenar(self, otra_lista):
         if otra_lista.lista_vacia():
             return
@@ -162,15 +188,10 @@ class ListaDoblementeEnlazada:
     def invertir(self):
         if self.cabeza is None or self.cabeza == self.cola:
             return
-
         actual = self.cabeza
         while actual:
             temp = actual.siguiente
             actual.siguiente = actual.anterior
             actual.anterior = temp
             actual = temp  # avanzar al siguiente nodo (el original siguiente)
-
         self.cabeza, self.cola = self.cola, self.cabeza
-
-
-
