@@ -1,17 +1,20 @@
-# 🐍Nombre del proyecto (darle un nombre significativo) 
+# Juego de Cartas GUERRA 
 
 Breve descripción del proyecto:
-
-Ejemplo: “Este es un script en el que se comparan algoritmos de ordenamiento. Permite [describir funcionalidades principales].
+En este proyecto, implementamos el juego de cartas guerra proporcionado por la catedra utilizando la 
+lista doblemente enlazada para tener una estructura de datos eficientes 
 
 ---
 ## 🏗Arquitectura General
 
-Explica brevemente cómo está organizado el código (funciones y/o clases)
+El código se encuentra organizado en 4 módulos, incluidos en la carpeta [modules](./modules/) del proyecto:
+   - Carta: en este se encuentran las clases que definen el valor y palo de la carta
+   - Mazo: en este se encuentran las clases que definen los mazos de los jugadores, haciendo uso de la funcion 
+   lista doble enlazada definida en el módulo correspondieente a esta
+   - LDE: módulo en el cual se define la lista doblemente enlazada, utilizada en el mazo
+   - Juego guerra: en este se define el juego de la guerra, utilizando los módulos mazo y carta 
 
-Las gráficas de los resultados están disponible en la carpeta [data](./data) del proyecto.
-
-El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
+En este problema no era necesaria la generacion de gráficas. 
 
 ---
 ## 📑Dependencias
@@ -36,8 +39,8 @@ El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
 ---
 ## 🙎‍♀️🙎‍♂️Autores
 
-- Apellido y Nombre del primer integrante
-- Apellido y Nombre del primer integrante
+- Biasoli, Ana Inés
+- Taborda, Verónica
 
 ---
 
