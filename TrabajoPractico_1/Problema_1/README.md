@@ -1,9 +1,8 @@
-# 🐍Nombre del proyecto (darle un nombre significativo) 
+# 🐍Trabajo Practico n°1 
 
 Breve descripción del proyecto:
 
-Ejemplo: “Este es un script en el que se comparan algoritmos de ordenamiento. Permite [describir funcionalidades principales].
-
+ “Este es un script en el que se comparan algoritmos de ordenamiento. Permite  integrar la implementación y análisis de algoritmos de ordenamiento y estructuras de datos abstractas en Python, permitiendo profundizar en conceptos fundamentales de eficiencia algorítmica, manejo de excepciones y pruebas unitarias. Incluye tres problemas: la comparación de métodos de ordenamiento (burbuja, quicksort, radix sort y sorted), la construcción de una lista doblemente enlazada genérica con múltiples operaciones eficientes, y la simulación del juego de cartas "Guerra" utilizando dicha estructura. El proyecto también incorpora mediciones de rendimiento, análisis de complejidad y visualización de resultados mediante gráficos.
 ---
 ## 🏗Arquitectura General
 
@@ -36,9 +35,8 @@ El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
 ---
 ## 🙎‍♀️🙎‍♂️Autores
 
-- Apellido y Nombre del primer integrante
-- Apellido y Nombre del primer integrante
+- Biasoli, Ana Inés
+- Taborda, Veronica
 
 ---
 
-> **Consejo**: Mantén el README **actualizado** conforme evoluciona el proyecto, y elimina (o añade) secciones según necesites. Esta plantilla es sólo un punto de partida general.

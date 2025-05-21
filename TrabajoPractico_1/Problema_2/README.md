@@ -1,17 +1,28 @@
-# 🐍Nombre del proyecto (darle un nombre significativo) 
+# Lista Doblemente Enlazada en Python
+
 
 Breve descripción del proyecto:
 
-Ejemplo: “Este es un script en el que se comparan algoritmos de ordenamiento. Permite [describir funcionalidades principales].
+Este módulo implementa un TAD (Tipo Abstracto de Dato) de lista doblemente enlazada desde cero, sin utilizar estructuras de datos de alto nivel de Python. Permite almacenar y manipular elementos de cualquier tipo que sean comparables, e incluye métodos como inserción, extracción, copia, inversión y concatenación. Además, se analiza la eficiencia de las operaciones mediante gráficas de tiempo de ejecución.
+
+
 
 ---
 ## 🏗Arquitectura General
 
-Explica brevemente cómo está organizado el código (funciones y/o clases)
+El proyecto está organizado de la siguiente manera:
 
-Las gráficas de los resultados están disponible en la carpeta [data](./data) del proyecto.
+Clase Nodo: Representa cada nodo de la lista, con punteros al anterior y siguiente nodo, y un valor almacenado.
 
-El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
+Clase ListaDobleEnlazada: Contiene los métodos necesarios para manipular la lista (agregar, insertar, extraer, copiar, invertir, concatenar, etc.). Todos los métodos están diseñados para ser eficientes en complejidad temporal y no utilizan listas de Python para almacenar datos.
+
+Manejo de excepciones: Se implementan validaciones para manejar intentos de acceso a posiciones inválidas dentro de la lista.
+
+Tests unitarios: Se proveen casos de prueba para validar el correcto funcionamiento de los métodos.
+
+Medición de rendimiento: Se analizan y grafican los tiempos de ejecución de los métodos __len__, copiar() e invertir() para evaluar su complejidad.
+
+
 
 ---
 ## 📑Dependencias
@@ -36,9 +47,6 @@ El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
 ---
 ## 🙎‍♀️🙎‍♂️Autores
 
-- Apellido y Nombre del primer integrante
-- Apellido y Nombre del primer integrante
-
+- Biasoli, Ana Inés
+- Taborda, Veronica
 ---
-
-> **Consejo**: Mantén el README **actualizado** conforme evoluciona el proyecto, y elimina (o añade) secciones según necesites. Esta plantilla es sólo un punto de partida general.

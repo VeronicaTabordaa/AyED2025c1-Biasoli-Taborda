@@ -1,8 +1,8 @@
 # Juego de Cartas GUERRA 
 
-Breve descripción del proyecto:
-En este proyecto, implementamos el juego de cartas guerra proporcionado por la catedra utilizando la 
-lista doblemente enlazada para tener una estructura de datos eficientes 
+En este proyecto implementamos el juego de cartas “Guerra”, provisto por la cátedra, utilizando una lista doblemente enlazada como estructura subyacente para los mazos de los jugadores. Esta elección permite gestionar el juego de manera eficiente, respetando los principios de los tipos abstractos de datos.
+
+
 
 ---
 ## 🏗Arquitectura General
@@ -43,4 +43,3 @@ el funcionamiento del código.
 
 ---
 
-> **Consejo**: Mantén el README **actualizado** conforme evoluciona el proyecto, y elimina (o añade) secciones según necesites. Esta plantilla es sólo un punto de partida general.
