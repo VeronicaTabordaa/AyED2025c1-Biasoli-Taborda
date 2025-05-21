@@ -15,6 +15,7 @@ El código se encuentra organizado en 4 módulos, incluidos en la carpeta [modul
    - Juego guerra: en este se define el juego de la guerra, utilizando los módulos mazo y carta 
 
 En este problema no era necesaria la generacion de gráficas. 
+ 
 
 ---
 ## 📑Dependencias
