@@ -19,10 +19,8 @@ En este problema no era necesaria la generacion de gráficas.
 ---
 ## 📑Dependencias
 
-1. **Python 3.x**
-2. **matplotlib** (`pip install matplotlib`)
-3. listar dependencias principales
-4. Dependencias listadas en requierements.txt
+En este problema del proyecto no requerimos de ninguna instalación de dependencias para 
+el funcionamiento del código.
 
 ---
 ## 🚀Cómo Ejecutar el Proyecto
