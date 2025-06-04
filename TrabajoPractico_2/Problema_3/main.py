@@ -1,67 +1,60 @@
-from collections import defaultdict
 import heapq
+from collections import defaultdict
 
-def leer_grafo(file_path):
-    graph = defaultdict(list)
-    nodes = set()
-    with open(file_path, "r", encoding="utf-8") as f:
-        for line in f:
-            if not line.strip():
-                continue
-            a, b, dist = line.strip().split(", ")
-            dist = int(dist)
-            graph[a].append((b, dist))
-            graph[b].append((a, dist))
-            nodes.update([a, b])
-    return graph, nodes
+# Leer archivo y construir grafo no dirigido
+def leer_grafo(filename):
+    grafo = defaultdict(list)
+    with open(filename, 'r') as archivo:
+        for linea in archivo:
+            partes = linea.strip().split(',')
+            if len(partes) != 3:
+                continue  # Ignora líneas vacías o mal formateadas
+            origen = partes[0].strip()
+            destino = partes[1].strip()
+            try:
+                distancia = int(partes[2].strip())
+            except ValueError:
+                continue  # Ignora si la distancia no es un número válido
+            grafo[origen].append((destino, distancia))
+            grafo[destino].append((origen, distancia))
+    return grafo
 
-def prim_mst(graph, start):
-    visited = set([start])
-    heap = []
-    parents = {start: None}
-    children = defaultdict(list)
-    total_distance = 0
-    
-    for vecino, peso in graph[start]:
-        heapq.heappush(heap, (peso, start, vecino))
-    
-    while heap and len(visited) < len(graph):
-        peso, u, v = heapq.heappop(heap)
-        if v in visited:
+# Algoritmo de Prim para generar el Árbol de Expansión Mínima (MST)
+def prim(grafo, inicio):
+    visitado = set()
+    mst = {}
+    hijos = defaultdict(list)
+    heap = [(0, inicio, None)]  # (peso, nodo_actual, nodo_padre)
+    total = 0
+
+    while heap:
+        peso, actual, padre = heapq.heappop(heap)
+        if actual in visitado:
             continue
-        visited.add(v)
-        parents[v] = u
-        children[u].append(v)
-        total_distance += peso
-        
-        for vecino, peso_vecino in graph[v]:
-            if vecino not in visited:
-                heapq.heappush(heap, (peso_vecino, v, vecino))
-    
-    return parents, children, total_distance
+        visitado.add(actual)
+        if padre:
+            mst[actual] = padre
+            hijos[padre].append(actual)
+            total += peso
+        for vecino, peso_vecino in grafo[actual]:
+            if vecino not in visitado:
+                heapq.heappush(heap, (peso_vecino, vecino, actual))
+    return mst, hijos, total
 
-def main():
-    file_path = "data/aldeas.txt"  # Aquí está la ruta relativa correcta
-    graph, nodes = leer_grafo(file_path)
-    
-    start = "Peligros"
-    padres, hijos, distancia_total = prim_mst(graph, start)
-    
-    aldeas_ordenadas = sorted(nodes)
-    print("Aldeas en orden alfabético:")
-    for aldea in aldeas_ordenadas:
-        print(aldea)
-    
-    print("\nPara cada aldea:")
-    for aldea in aldeas_ordenadas:
-        padre = padres.get(aldea)
-        hijos_ = hijos.get(aldea, [])
-        if aldea == start:
-            print(f"- {aldea}: es la aldea origen, envía noticias a {hijos_}")
-        else:
-            print(f"- {aldea}: recibe noticia de {padre}, envía a {hijos_}")
-    
-    print(f"\nDistancia total recorrida por todas las palomas: {distancia_total} leguas")
+# Mostrar resultados
+def mostrar_resultados(mst, hijos, total_leguas):
+    aldeas = sorted(set(mst.keys()) | set(hijos.keys()) | {"Peligros"})
+    for aldea in aldeas:
+        recibe_de = mst.get(aldea, "—")
+        envia_a = sorted(hijos.get(aldea, []))
+        print(f"Aldea: {aldea}")
+        print(f"  Recibe de: {recibe_de}")
+        print(f"  Envía a: {', '.join(envia_a) if envia_a else '—'}")
+        print()
+    print(f"Total de leguas recorridas por las palomas: {total_leguas}")
 
+# Ejecutar todo
 if __name__ == "__main__":
-    main()
+    grafo = leer_grafo('aldeas.txt')
+    mst, hijos, total_leguas = prim(grafo, 'Peligros')
+    mostrar_resultados(mst, hijos, total_leguas)
