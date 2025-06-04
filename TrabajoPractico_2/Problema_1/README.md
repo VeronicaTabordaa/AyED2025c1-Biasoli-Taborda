@@ -14,11 +14,11 @@ caso de empate, en orden de llegada
 ## 🏗Arquitectura General
 
 El proyecto se encuentra organizado en 3 partes:
-      En la carpeta modules se encuentra el archivo Prioridad_Queue.py, donde se define 
+      * En la carpeta modules se encuentra el archivo Prioridad_Queue.py, donde se define 
       la clase PrioridadQueue que se utiliza para definir el orden y prioridad de atención 
-      En la carpeta apps se encuentra el archivo simulacion_triaje.py, donde se implementa 
+      * En la carpeta apps se encuentra el archivo simulacion_triaje.py, donde se implementa 
       el triaje de los pacientes utilizando la clase definida en Prioridad_Queue.py
-      En la carpeta test se encuentra el test_prioridad, en el que se encuentran pruebas 
+      * En la carpeta test se encuentra el test_prioridad, en el que se encuentran pruebas 
       unitarias que verifican la estructura de datos funcione correctamente. 
 
 No hay gráficas de los resultados, pero en caso de haberlas se encontrarían disponibles 
@@ -30,7 +30,7 @@ en la carpeta [data](./data) del proyecto.
 1. **Python 3.x**
 2. **itertools** (incluida en la biblioteca estándar de python)
 3. **heapq** (incluida en la biblioteca estándar de Python)
-4. Las dependencias están listadas en `requirements.txt`, disponible en la carpeta [deps](./deps).
+4. No se requieren dependencias externas para el funcionamiento del proyecto, en caso de que hubiera se encontrarían listadas en  requirements.txt, disponible en la carpeta [deps](./deps).
 
 ---
 ## 🚀Cómo Ejecutar el Proyecto
