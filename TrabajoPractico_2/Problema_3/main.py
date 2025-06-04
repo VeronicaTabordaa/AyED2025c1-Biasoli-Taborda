@@ -59,8 +59,6 @@ def imprimir_resultados(grafo, distancias, predecesores):
         print(f"  Recibe de: {recibe_de}")
         print(f"  Envía a: {envia_a}\n")
 
-# --- EJECUCIÓN PRINCIPAL ---
-
 grafo = leer_grafo('data/aldeas.txt')
 distancias, predecesores = dijkstra(grafo, "Peligros")
 imprimir_resultados(grafo, distancias, predecesores)

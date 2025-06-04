@@ -1,18 +1,30 @@
-# 🐍Nombre del proyecto (darle un nombre significativo) 
+# 🐍"Red de Comunicaciones Aldeanas"
+
+
 
 Breve descripción del proyecto:
 
-Ejemplo: “Este es un script en el que se comparan algoritmos de ordenamiento. Permite [describir funcionalidades principales].
+Este script modela una red de aldeas conectadas entre sí mediante caminos con pesos (distancias). Utiliza el algoritmo de Dijkstra para determinar el camino más corto desde la aldea "Peligros" hacia todas las demás, con el objetivo de simular cómo se enviarían cartas de manera eficiente entre las aldeas.
 
+Permite identificar:
+
+Desde qué aldea se reciben cartas.
+
+A qué aldea se envían cartas desde cada punto intermedio del camino más corto.
 ---
 ## 🏗Arquitectura General
 
-Explica brevemente cómo está organizado el código (funciones y/o clases)
+El proyecto está estructurado de forma modular mediante funciones:
 
-Las gráficas de los resultados están disponible en la carpeta [data](./data) del proyecto.
+leer_grafo(filename): Lee un archivo de texto y construye el grafo como un diccionario de adyacencia.
 
-El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
+dijkstra(grafo, inicio): Implementa el algoritmo de Dijkstra para calcular los caminos mínimos desde una aldea origen.
 
+reconstruir_camino(predecesores, destino): Reconstruye el camino más corto desde la aldea origen hasta una aldea destino usando el diccionario de predecesores.
+
+imprimir_resultados(grafo, distancias, predecesores): Muestra los resultados de manera clara, indicando para cada aldea a quién le envía y de quién recibe.
+
+Nota: Las conexiones están definidas en el archivo aldeas.txt, ubicado en la carpeta data.
 ---
 ## 📑Dependencias
 
@@ -36,9 +48,7 @@ El informe completo está disponible en la carpeta [docs](./docs) del proyecto.
 ---
 ## 🙎‍♀️🙎‍♂️Autores
 
-- Apellido y Nombre del primer integrante
-- Apellido y Nombre del primer integrante
+- Biasoli Ana, Inés
+- Taborda, Verónica
 
 ---
-
-> **Consejo**: Mantén el README **actualizado** conforme evoluciona el proyecto, y elimina (o añade) secciones según necesites. Esta plantilla es sólo un punto de partida general.
