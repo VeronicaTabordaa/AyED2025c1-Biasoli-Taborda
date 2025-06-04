@@ -15,6 +15,8 @@ En la carpeta [tests](./tests) se encuentra el archivo test_temperatura.py en el
 
 En este proyecto no se generan gráficas, pero en caso de que hubiera se encontrarían en la carpeta [data](./data). 
 
+El documento con explicaciones adicionales se encuentra en la carpeta PROBLEMA_2
+
 ---
 ## 📑Dependencias
 
