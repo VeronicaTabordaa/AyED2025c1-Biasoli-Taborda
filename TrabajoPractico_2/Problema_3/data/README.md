@@ -1,7 +1,3 @@
 # 🗄️Datos
 
-Contenidos:
-aldeas.txt: Archivo principal de entrada, contiene las conexiones entre aldeas en formato:
-
-Esta carpeta sirve como repositorio central de los datos utilizados y generados durante la ejecución del proyecto.
-
+Archivo principal de entrada. Contiene las conexiones entre aldeas en formato texto plano. Cada línea representa una conexión entre dos aldeas, e incluye opcionalmente la distancia o peso de esa conexión.
