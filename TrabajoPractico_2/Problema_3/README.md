@@ -1,7 +1,5 @@
 # 🐍"Red de Comunicaciones Aldeanas"
 
-
-
 Breve descripción del proyecto:
 
 Este script modela una red de aldeas conectadas entre sí mediante caminos con pesos (distancias). Utiliza el algoritmo de Dijkstra para determinar el camino más corto desde la aldea "Peligros" hacia todas las demás, con el objetivo de simular cómo se enviarían cartas de manera eficiente entre las aldeas.
