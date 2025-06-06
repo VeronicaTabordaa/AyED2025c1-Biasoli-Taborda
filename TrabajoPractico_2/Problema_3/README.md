@@ -27,8 +27,8 @@ Nota: Las conexiones están definidas en el archivo aldeas.txt, ubicado en la ca
 ## 📑Dependencias
 
 1. **Python 3.x**
-2. **matplotlib** (`pip install matplotlib`)
-3. listar dependencias principales
+2. heapq, que es estándar de phyton
+3. defaultdict, que es un diccionario especial 
 4. Dependencias listadas en requierements.txt
 
 ---
