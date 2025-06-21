@@ -2,9 +2,9 @@
 
 
 import unittest
-from modules.Prioridad_Queue import PrioridadQueue
+from modules.colaprioridadQueue import PrioridadQueue
 
-class TestPrioridadQueue(unittest.TestCase):
+class TestColaDePrioridad(unittest.TestCase):
     def test_orden(self):
         pq = PrioridadQueue()
         pq.push("A", 2)
@@ -25,6 +25,6 @@ class TestPrioridadQueue(unittest.TestCase):
         self.assertEqual(pq.pop(), "B")
         self.assertEqual(pq.pop(), "C")
 
-
 if __name__ == '__main__':
     unittest.main()
+
