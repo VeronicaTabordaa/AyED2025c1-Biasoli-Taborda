@@ -14,12 +14,14 @@ caso de empate, en orden de llegada
 ## 🏗Arquitectura General
 
 El proyecto se encuentra organizado en 3 partes:
-      * En la carpeta modules se encuentra el archivo Prioridad_Queue.py, donde se define 
-      la clase PrioridadQueue que se utiliza para definir el orden y prioridad de atención 
-      * En la carpeta apps se encuentra el archivo simulacion_triaje.py, donde se implementa 
-      el triaje de los pacientes utilizando la clase definida en Prioridad_Queue.py
-      * En la carpeta test se encuentra el test_prioridad, en el que se encuentran pruebas 
-      unitarias que verifican la estructura de datos funcione correctamente. 
+- En la carpeta modules se encuentran los archivos: 
+  - mont_binario.py: implementación propia de un montículo binario min-heap que permite mantener el orden de prioridad 
+  - colaprioridadQueue.py: se define la clase PrioridadQueue que utiliza el montículo binario. Es una estructura genérica que nos permite almacenar cualquier tipo de dato con una prioridad asociada
+  paciente.py: código provisto por la cátedra que representa a los pacientes con sus atributos: nombre, apelllido, riesgo, etc.  
+
+- En la carpeta apps se encuentra el archivo simular_paciente.py, código también provisto por la cátedra pero con algunas modificaciones. Se adaptó el código para cumplir con el objetivo del problema donde se deben atender los pacientes de acuerdo a su riesgo y orden de llegada. Para esto se utiliza la cola de prioridad implementada. 
+
+- En la carpeta test se encuentra el test_prioridad.py, en el que se encuentran pruebas unitarias que verifican que los elementos se extraen en el orden correcto de prioridad y que en caso de empate de prioridad se respeta el orden de llegada. 
 
 No hay gráficas de los resultados, pero en caso de haberlas se encontrarían disponibles 
 en la carpeta [data](./data) del proyecto.
