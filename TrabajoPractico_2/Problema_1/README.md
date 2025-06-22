@@ -30,9 +30,10 @@ en la carpeta [data](./data) del proyecto.
 ## 📑Dependencias
 
 1. **Python 3.x**
-2. **itertools** (incluida en la biblioteca estándar de python)
-3. **heapq** (incluida en la biblioteca estándar de Python)
-4. No se requieren dependencias externas para el funcionamiento del proyecto, en caso de que hubiera se encontrarían listadas en  requirements.txt, disponible en la carpeta [deps](./deps).
+2. random, incluido en la biblioteca estándar de Python
+3. datetime, incluido en la biblioteca estándar de Python
+4. time, incluido en la biblioteca estándar de Python
+5. No se requieren dependencias externas para el funcionamiento del proyecto, en caso de que hubiera se encontrarían listadas en  requirements.txt, disponible en la carpeta [deps](./deps).
 
 ---
 ## 🚀Cómo Ejecutar el Proyecto
