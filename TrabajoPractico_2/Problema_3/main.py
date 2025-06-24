@@ -25,6 +25,10 @@ prim(grafo_aldeas, inicio)
 
 nombres_aldeas = grafo_aldeas.obtenerVertices()
 ordenadas = sorted(nombres_aldeas)
+print("📜 Lista de aldeas en orden alfabético:")
+for nombre in ordenadas:
+    print(f"- {nombre}")
+print()
 
 # Mostrar origen de la noticia y las aldeas a las que se reenvía
 print("🔄 Propagación de la noticia:\n")
